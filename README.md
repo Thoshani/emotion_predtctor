@@ -1,4 +1,4 @@
-![Screenshot 2025-06-29 181322](https://github.com/user-attachments/assets/abefa2ca-738e-4872-ba91-7065ac7dcd91)
+
 # 📌 Emotion-Aware Feedback Analyzer
 
 This project is an **Emotion-Aware Feedback Analyzer** for mentoring, mental health, or educational chat systems. It automatically detects the **emotional tone** of user messages (e.g., *sad*, *happy*, *angry*, *annoyed*, *dull*) to help mentors understand feedback sentiment in real time.
@@ -70,7 +70,9 @@ The final app predicts emotions like:
 😡 Angry
 😐 Dull
 😠 Annoyed
-This helps mentors detect tone in user feedback and adapt support accordingly.
 
+This helps mentors detect tone in user feedback and adapt support accordingly.
+OUTPUT
+![Screenshot 2025-06-29 181322](https://github.com/user-attachments/assets/abefa2ca-738e-4872-ba91-7065ac7dcd91)
 
 

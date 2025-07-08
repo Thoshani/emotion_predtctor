@@ -1,76 +1,76 @@
-📌 Project Title
-Emotion-Aware Feedback Analyzer & Mentoring Chat System
+![Screenshot 2025-06-29 181322](https://github.com/user-attachments/assets/abefa2ca-738e-4872-ba91-7065ac7dcd91)
+# 📌 Emotion-Aware Feedback Analyzer
 
-📄 Project Description
-This project is an AI-powered feedback analyzer that uses text sentiment analysis and emotion classification to detect the emotional tone of user messages in real-time. It helps mentors, educators, and support agents better understand users’ feelings — such as sadness, happiness, anger, dullness, or annoyance — based on the text they write.
+This project is an **Emotion-Aware Feedback Analyzer** for mentoring, mental health, or educational chat systems. It automatically detects the **emotional tone** of user messages (e.g., *sad*, *happy*, *angry*, *annoyed*, *dull*) to help mentors understand feedback sentiment in real time.
 
-🎯 Goal
-The goal is to build an emotion-aware chat or feedback system that:
+---
 
-Analyzes messages automatically.
+## 📂 Project Structure
 
-Identifies the emotion behind each message.
+| File | Description |
+|------|--------------|
+| `app.py` | Main app script for inference or API serving |
+| `app_rnn.py` | RNN-based emotion classifier app |
+| `emotion_predictor.ipynb` | Jupyter notebook for training, testing & experiments |
+| `emotion_rnn_model.h5` | Pre-trained RNN (LSTM) model weights |
+| `glove.6B.100d.txt` | GloVe word embeddings for the RNN |
+| `train.txt` | Training data |
+| `val.txt` | Validation data |
+| `test.txt` | Test data |
+| `requirements.txt` | Python dependencies |
+| `README.md` | Project documentation |
 
-Supports better responses, mentoring, or automated suggestions.
+---
 
-🔍 Dataset
-The system uses a labeled dataset of user messages:
+## 🔍 **How It Works**
 
-Messages: Short text inputs (e.g., “I feel lost”, “I’m happy today!”).
+- **Dataset**: Text files (`train.txt`, `val.txt`, `test.txt`) containing messages labeled with emotions.
+- **Preprocessing**: Messages are tokenized, cleaned, and vectorized using **TF-IDF** (for Logistic Regression) or **Word Embeddings** (GloVe for RNN).
+- **Models**:
+  - `Logistic Regression` → Baseline sentiment classifier.
+  - `RNN/LSTM` → Sequence model for capturing context.
+- **Outputs**: Emotion label for each input message.
 
-Labels: Emotions like sad, happy, angry, dull, annoyed.
+---
 
-The dataset is preprocessed using TF-IDF to convert text into numerical features.
+## 🚀 **How to Run**
 
-⚙️ Technologies & Methods
-Text Preprocessing: Cleaning, lowercasing, removing stopwords.
+**1️⃣ Install Dependencies**
 
-Feature Engineering: TF-IDF vectorization.
 
-Models Used:
+pip install -r requirements.txt
+2️⃣ Run the Logistic Regression or TF-IDF baseline
 
-Logistic Regression: A baseline shallow classifier.
 
-RNN/LSTM: (Optional) Deep learning model for better context understanding.
+python app.py
+3️⃣ Run the RNN Emotion Predictor
 
-Evaluation: Accuracy, precision, recall, F1-score, confusion matrix.
+python app_rnn.py
+4️⃣ Train or test interactively
+
+Use emotion_predictor.ipynb in Google Colab or locally to:
+
+Preprocess data
+
+Train your model
+
+Evaluate metrics
+
+⚙️ Key Files
+glove.6B.100d.txt: Pretrained embeddings for richer text representation in the RNN.
+
+emotion_rnn_model.h5: Saved RNN model.
+
+app_rnn.py: Loads the RNN model, tokenizes input, and predicts emotion.
 
 ✅ Expected Outcome
-A working Feedback Analyzer that:
+The final app predicts emotions like:
+😞 Sad
+😀 Happy
+😡 Angry
+😐 Dull
+😠 Annoyed
+This helps mentors detect tone in user feedback and adapt support accordingly.
 
-Takes a message as input.
 
-Predicts the emotion label.
-
-Can be integrated into chatbots, mentoring tools, or feedback dashboards.
-
-🚀 How to Use
-Train the Model
-Run the Python script to preprocess the dataset, train the model, and evaluate it.
-
-Make Predictions
-Use the trained model to predict emotions for new text messages.
-
-Deploy (Optional)
-Integrate it into a web app using Flask or Streamlit for real-time feedback analysis.
-
-📂 Project Structure
-arduino
-Copy
-Edit
-📦 Emotion-Feedback-Analyzer/
- ├── data/
- │   └── text.csv (messages + emotion labels)
- ├── models/
- │   └── logistic_regression.pkl (saved model)
- ├── app.py (Flask or Streamlit app)
- ├── emotion_analyzer.py (training & prediction code)
- ├── requirements.txt (dependencies)
- └── README.md (project description)
-📊 Results
-Achieves good classification performance on test data. Evaluated using:
-
-Classification Report
-
-Confusion Matrix
 
